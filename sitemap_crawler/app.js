@@ -37,7 +37,7 @@ async function crawlSitemap(sitemapURL) {
 
       const statusCode = pageResponse.status();
 
-      if (statusCode !== 200) {
+      if (statusCode !== 200 || statusCode !== 304) {
         result.nonOKCount++;
         result.nonOKReqURLs.push(url);
       }
